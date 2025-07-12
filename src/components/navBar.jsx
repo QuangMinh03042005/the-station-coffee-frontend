@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import getImages from "../utils/images";
+
+const logo = getImages("images")[0]
 
 export default function Navbar() {
   const items = ["Trang Chủ", "Menu", "Giới Thiệu", "Liên Hệ"]
@@ -7,7 +10,7 @@ export default function Navbar() {
     <nav className="bg-green-300 shadow px-6 py-4 flex justify-between items-center">
       <div className="flex items-center justify-center space-x-1">
         <img
-          src="src/assets/images/logo.jpg"
+          src={logo}
           className="w-16 h-16 rounded-full"
         ></img>
         <h1 className="text-xl">The Station Coffee</h1>
