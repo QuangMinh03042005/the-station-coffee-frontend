@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
+import getImages from "../utils/images";
 
-const path = "src/assets/images/slide/"
-const images = []
-for (var i = 1; i <= 3; ++i) {
-    images.push(path + "img-" + i + ".jpg")
-}
+const images = getImages("images/slide")
+
+console.log(images);
+
 
 function ImageSlideShow() {
   const [currentIndex, setCurrentIndex] = useState(0);
