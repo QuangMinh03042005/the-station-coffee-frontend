@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import getImages from "../utils/images";
+import { getImages } from "../utils/images";
 
 const images = getImages("images/slide")
 

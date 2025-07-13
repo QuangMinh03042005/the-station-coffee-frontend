@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import getImages from "../utils/images";
+import { getImage } from "../utils/images";
 
-const logo = getImages("images")[0]
+const logo = getImage("images", "logo.jpg")
+console.log(logo)
 
 export default function Navbar() {
   const items = ["Trang Chủ", "Menu", "Giới Thiệu", "Liên Hệ"]
