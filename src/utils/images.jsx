@@ -12,6 +12,9 @@ const formattedImages = Object.entries(images).map(([fullPath, src]) => {
     return { src, path: folderPath};
 });
 
+console.log(formattedImages);
+
+
 // get all image from path
 export function getImages(path) {
     let images = formattedImages.filter(image => image.path == path).map(image => image.src)
