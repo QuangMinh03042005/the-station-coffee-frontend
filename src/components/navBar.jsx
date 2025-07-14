@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { getImage } from "../utils/images";
 
-const logo = getImage("images", "logo.jpg")
+const logo = getImage("images", "logo")
 console.log(logo)
 
 export default function Navbar() {

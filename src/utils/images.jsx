@@ -21,7 +21,13 @@ export function getImages(path) {
     return images
 }
 
-// get only image with name == fileName from path
+/*
+    when deploy to production , vite uses dist/assets instead of src/assets, if using 
+    [file name].{jpg, png, ...}, it doesn't work. Use only [file name] instead.
+    example:
+        const logo = getImage("images", "logo.jpg") // wrong, it's work only on local
+        const logo = getImage("images", "logo") // right, it's work in both place.
+*/
 export function getImage(path, fileName) {
     let image = getImages(path).find(image => image.includes(fileName))
     return image
