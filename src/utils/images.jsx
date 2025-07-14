@@ -23,6 +23,6 @@ export function getImages(path) {
 
 // get only image with name == fileName from path
 export function getImage(path, fileName) {
-    let image = getImages(path).find(image => image.substring(image.lastIndexOf("/") + 1) == fileName)
+    let image = getImages(path).find(image => image.includes(fileName))
     return image
 }
