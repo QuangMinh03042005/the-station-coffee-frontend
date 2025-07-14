@@ -86,8 +86,8 @@ function Footer() {
       <hr className="my-6 border-t border-[#f5c453]/30" />
 
       {/* Copyright */}
-      <div className="mt-8 text-center text-xs text-[#f5c453]/70">
-        &copy; 2025 The Station Café. Thiết kế bởi Quang Minh.
+      <div className="mt-8 text-center text-xs italic text-[#f5c453]/70">
+        &copy;The Station Coffee 2023 | All rights reserved. Website by Minh Coder.
       </div>
     </footer>
   );
