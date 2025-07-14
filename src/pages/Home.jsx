@@ -1,19 +1,22 @@
 import { useState, useEffect } from "react";
 import { getImages } from "../utils/images";
 
-const images = getImages("images/slide")
+const slideProduct = getImages("images/slide/product_ads")
+const slideView = getImages("images/slide/view")
 
-console.log(images);
+console.log(slideProduct);
+console.log(slideView);
 
 
-function ImageSlideShow() {
+
+function ImageSlideShow({slide}) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Chuyển ảnh sau mỗi 5 giây
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) =>
-        prev === images.length - 1 ? 0 : prev + 1
+        prev === slide.length - 1 ? 0 : prev + 1
       );
     }, 5000); // 5000ms = 5s
 
@@ -22,20 +25,20 @@ function ImageSlideShow() {
 
   const prevSlide = () => {
     setCurrentIndex((prev) =>
-      prev === 0 ? images.length - 1 : prev - 1
+      prev === 0 ? slide.length - 1 : prev - 1
     );
   };
 
   const nextSlide = () => {
     setCurrentIndex((prev) =>
-      prev === images.length - 1 ? 0 : prev + 1
+      prev === slide.length - 1 ? 0 : prev + 1
     );
   };
 
   return (
     <div className="relative w-full   overflow-hidden rounded-2xl shadow-lg">
       <img
-        src={images[currentIndex]}
+        src={slide[currentIndex]}
         alt="slide"
         className="w-full max-w-full h-[75vh] object-cover transition-all duration-500 border border-gray-300 shadow-lg rounded-xl"
       />
@@ -62,7 +65,7 @@ function ImageSlideShow() {
 function MainDrinks() {
     return (
         <div className="w-full max-w-full">
-            <img src={images[0]} className="w-full"></img>
+            <img src={slideProduct[0]} className="w-full"></img>
         </div>
     )
 }
@@ -70,7 +73,8 @@ function MainDrinks() {
 export default function Home() {
     return(
         <div className="flex flex-col gap-5 px-8 mt-10 w-full items-center">
-            <ImageSlideShow/>
+            <ImageSlideShow slide={slideProduct}/>
+            <ImageSlideShow slide={slideView}/>
             <MainDrinks/>
         </div>
     )

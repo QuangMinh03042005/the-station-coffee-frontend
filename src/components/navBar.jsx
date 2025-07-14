@@ -5,8 +5,8 @@ const logo = getImage("images", "logo")
 console.log(logo)
 
 export default function Navbar() {
-  const items = ["Trang Chủ", "Menu", "Giới Thiệu", "Liên Hệ"]
-  const links = ["/", "menu", "about" , "contact"]
+  const items = ["Trang Chủ", "Menu", "Giới Thiệu"]
+  const links = ["/", "menu", "about" ]
   return (
     <nav className="bg-green-300 shadow px-6 py-4 flex justify-between items-center">
       <div className="flex items-center justify-center space-x-1">
